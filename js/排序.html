@@ -1,0 +1,101 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            .queueStyle{
+                background-color: red;
+                margin: 10px;
+                padding: 5px;
+                text-align: center;
+                display: inline-block;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <form>
+                <input type=text name="num" id="num">
+                <input type=button name="lPush" id="lPushButn" value="左侧入">
+                <input type=button name="rPush" id="rPushButn" value="右侧入">
+                <input type=button name="lPop" id="lPopButn" value="左侧出">
+                <input type=button name="rPop" id="rPopButn" value="右侧出">
+                <input type=button name="sort" id="sort" value="冒泡排序">
+            </form>
+            <ul id="queue" name="23"></ul>
+        </div>
+        <script>
+            var value = null;
+            var lPushButn = document.querySelector("#lPushButn");
+            var rPushButn = document.querySelector("#rPushButn");
+            var lPopButn = document.querySelector("#lPopButn");
+            var rPopButn = document.querySelector("#rPopButn");
+            var sort = document.querySelector("#sort");
+            var queue = document.querySelector("#queue");
+            var li = document.querySelector("#queue>li");
+            lPushButn.onclick = function(){
+                if(correctInput()){
+                    var li = document.createElement("li");
+                    var height = value+"px";
+                    li.innerHTML = value;
+                    li.className = "queueStyle";
+                    li.setAttribute("style","height:"+height);
+                    queue.insertBefore(li,queue.firstChild);
+                }
+            };
+            rPushButn.onclick = function(){
+                if(correctInput()){
+                    var li = document.createElement("li");
+                    var height = value+"px";
+                    li.innerHTML = value;
+                    li.className = "queueStyle";
+                    li.setAttribute("style","height:"+height);
+                    queue.appendChild(li);
+                }
+            };
+            lPopButn.onclick = function(){
+                queue.removeChild(queue.firstChild);
+            };
+            rPopButn.onclick = function(){
+                queue.removeChild(queue.lastChild);
+            };
+            queue.onclick = function(){
+                queue.removeChild(event.target);
+            };
+            sort.onclick = function(){
+                var i = queue.childNodes.length;
+                var temp = document.createElement("li");
+                var a = null;
+                var b = null;
+                while(i>0){
+                    for(var j=0; j<i-1; j++){
+                        a = queue.childNodes[j];
+                        b = queue.childNodes[j+1];
+                        if(parseInt(a.innerHTML)>parseInt(b.innerHTML)){
+                            queue.replaceChild(temp,a);
+                            queue.replaceChild(a,b);
+                            queue.replaceChild(b,temp);
+                        }
+                    }
+                    i--;
+                }
+            };
+            function correctInput(){
+                value = document.querySelector("#num").value;
+                if(isNaN(value)||value==""){
+                    alert("请输入数字");
+                    return false;
+                }else if(value>100||value<10){
+                    alert("请输入10到100的数字");
+                    return false;
+                }else if(queue.childNodes.length>7){
+                    alert("最多只能有7个数字");
+                    return false;
+                }
+                else {
+                    return true;
+                }
+            }
+        </script>
+    </body>    
+</html>
