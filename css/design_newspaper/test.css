@@ -109,6 +109,7 @@ body{
 .part_b{
 	width: 641px;
 	overflow: hidden;
+	margin-bottom: 20px;
 }
 .what{
 	font-weight: bold;
@@ -166,9 +167,56 @@ body{
 	font: normal 12px "微软雅黑";
 }
 .part_b_how .bottom span{
-	font: italic 12px/16px 微软雅黑;
+	font: italic 12px/16px "微软雅黑";
     color: #cd4a48;
     opacity: 0.7;
 }
+
+/* part_c */
+.part_c{
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+.part_c_left{
+	width: 415px;
+}
+.part_c_left_top>p{
+	margin: 0;
+	font: normal 42px/16px "黑体";
+	color: #f5e327;
+	font-weight: bold;
+	color: #11456b;
+}
+.part_c_left_top .second_p{
+	font: normal 33px "黑体";
+	font-weight: bold;
+	margin: 16px 0;
+}
+
+.part_c_left_top>p>span{
+	font: italic 72px "黑体";
+	color: #f5e327;
+	font-weight: bold;
+}
+.part_c_left_top{
+	border-bottom: 2px solid #11456b;
+}
+.part_c_left_bottom span{
+	float: left;
+	font: normal 70px "微软雅黑";
+	color: #f5e327;
+ 	margin: -12px 8px 0 0;
+}
+.part_c_left_bottom p{
+	font: normal 12px/16px "宋体" sans-serif;
+	text-align: justify;
+	color: #767777;
+}
+.part_c_left_bottom img{
+	float: right;
+}
+
+
+
 
 
