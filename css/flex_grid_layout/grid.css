@@ -1,0 +1,14 @@
+body{
+	margin: 0;
+}
+.Grid {
+  display: flex;
+}
+
+.Grid-cell {
+  background-color: #f4f3f0;
+  text-align: center;
+  flex: 1;
+  border: 1px solid black;
+  margin: 5px;
+}

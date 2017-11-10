@@ -1,0 +1,29 @@
+body{
+	margin: 0;
+}
+.HolyGrail{
+	display: flex;
+	flex-direction: column;
+}
+.HolyGrail_body {
+	display: flex;
+	flex: 1;
+}
+.content{
+	flex: 1;
+	text-align: center;
+	background-color: gray;
+	border: 1px solid black;
+}
+.left,.right{
+  	flex: 0 0 12em;
+  	text-align: center;
+	background-color: #f4f3f0;
+	border: 1px solid black;
+}
+header,footer{
+	flex: 1;
+	text-align: center;
+	background-color: #f4f3f0;
+	border: 1px solid black;
+}
